@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+Secrets[:reports_verifier_secret] = "t0psecret"
+
+class DevelopmentModeReportsVerifier
+  def initialize(verifier)
+    @verifier = verifier
+  end
+  def generate(token)
+    token[0] = '2441449'
+    @verifier.generate(token)
+  end
+end
+Shopify::Secrets.instance_variable_set(
+  :@report_center_verifier,
+  DevelopmentModeReportsVerifier.new(Shopify::Secrets.report_center_verifier)
+)
