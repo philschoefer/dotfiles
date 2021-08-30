@@ -1,5 +1,6 @@
 cp ~/dotfiles/.gitconfig ~/
 cp ~/dotfiles/.zshrc ~/
+cp ~/dotfiles/.bash_profile ~/
 
 if [[ "$SPIN" = 1 ]]
 then
